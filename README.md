@@ -31,6 +31,22 @@ Erlang is a functional programming language with immutable data, pattern matchin
 - `spawn` creates a new process for a function defined in a module.
 - Erlang can have multiple processes running the module.
 - Sending messages using `Pid ! Msg` syntax.
+- Functions can be arguments to functions and functions can return functions.
+- _high-order functions_ are called a `fun`.
+- _list-at-a-time_ operations like `lists:map` or `lists:filter`.
+- pattern matching combined with `funs` is used for control structures.
+- _list comprehensions_ `[ F(X) || X <- L].`
+- _guard sequence_ separated by `;` is `true` if at least one of trhe guards are `true`.
+- _guard_ is a series of expressions, separated by `,` and is `true` if all expressions are `true`.
+- _guard predicates_
+- Use _records_ when the data uses a fixed number of predetermined atoms, number of elements and names of the elements will not change with time, when storage is an issue.
+- Use _maps_ for key-value structures when the keys are not known in advance, data with large numbers of different keys, or as a ubiquitous data structure where efficiency is traded-off for convenience, self-documenting data structures, key-value parse trees (XML, config files), communication with other languags using JSON.
+- _record_ declarations cannot be used in the shell, declare them in a module or use `rr`.
+- record definitions can be in the module source code or in a header file (`*.hrl`).
+- records are like `structs` in C.
+- records are decalred with a `-record(Name, {key1=Val1, …, keyN=ValN}).` with keys being an `atom`.
+- records are created with a `#`. Example: `ExRecord = #record_name{key1=Value1}.`
+- _maps_ have a similar syntax to _records_, but without the record name.
 
 
 [Program Development Using Erlang - Programming Rules and Conventions](http://www.erlang.se/doc/programming_rules.shtml)
