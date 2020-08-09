@@ -4,7 +4,8 @@
          pythag/1,
          perms/1,
          odds_and_evens1/1,
-         odds_and_evens2/1]).
+         odds_and_evens2/1,
+         sqrt/1]).
 
 for(Max, Max, F) -> [F(Max)];
 for (I, Max, F) -> [F(I)|for(I+1, Max, F)].
@@ -44,3 +45,7 @@ odds_and_evens_acc([H|T], Odds, Evens) ->
 odds_and_evens_acc([], Odds, Evens) ->
   {lists:reverse(Odds), lists:reverse(Evens)}.
 
+sqrt(X) when X < 0 -> 
+  error({squareRootNegativeArgument, X});
+sqrt(X) -> 
+  math:sqrt(X).
